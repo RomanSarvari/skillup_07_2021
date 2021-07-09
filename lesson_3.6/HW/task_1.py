@@ -1,5 +1,9 @@
-import difflib
-
+'''
+Задание 1
+Дано два текстовых файла.
+Выяснить, совпадают ли их строки.
+Если нет, то вывести несовпадающую строку из каждого файла.
+'''
 
 file_1 = '/Users/Sarvari/skillup_07_2021/lesson_3.6/HW/hw_1_1.txt'
 file_2 = '/Users/Sarvari/skillup_07_2021/lesson_3.6/HW/hw_1_2.txt'
@@ -15,11 +19,13 @@ list_2 = test2.readlines()
 k = 1
 for i, j in zip(list_1, list_2):
     if i != j:
-        test3.write("Line Number:" + str(k)+' ')
-        test3.write(i.rstrip("\n") + ' ' + j)
+        test3.write('Line Number:' + str(k)+' ')
+        test3.write(i.rstrip('\n') + ' ' + j)
     k = int(k)
     k = k+1
+test3.close()
 
-with open(file_3, "r") as modified_file:
+with open(file_3, 'r') as modified_file:
     for line in modified_file:
-        print(line, end="")
+        print(line, end = ' ' '\n')
+

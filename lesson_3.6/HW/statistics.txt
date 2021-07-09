@@ -1,0 +1,5 @@
+Symbols counts:116 
+Lines counts:4 
+Vovels counts:35 
+Consonants counts:32 
+Numbers counts:4 
