@@ -47,7 +47,7 @@ donbass_arena = Stadium(
         date = '29 August 2009',
         country = 'Ukraine',
         city = 'Donetsk',
-        capacity = '52667 seats',
+        capacity = '52667',
     )
 
 print(donbass_arena)
