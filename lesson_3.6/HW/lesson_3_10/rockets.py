@@ -2,6 +2,7 @@
 # 2. Rocket have to have delay, countdown
 # 3. Rocket have to have launch, countdown, delay function
 import random
+from threading import Thread
 from time import sleep
 
 
@@ -40,10 +41,17 @@ class Rocket:
 
 def main():
     N = 5
-    rockets = [Rocket(rocket_number=i + 1) for i in range(N)]
+    rockets = [Rocket(rocket_number=i+1) for i in range(N)]
+    rocket_threads = [Thread(target=rocket.launch) for rocket in rockets]
+    threads = []
     for rocket in rockets:
-        rocket.launch()
+        threads.append(Thread(target=rocket.launch))
+    for t in rocket_threads:
+        t.start()
+    for t in rocket_threads:
+        t.join()
 
-
+    # for rocket in rockets:
+    #     rocket.launch()
 if __name__ == "__main__":
     main()
