@@ -13,11 +13,8 @@ class Money:
         self.fraction = kwargs.get('fraction', 0)
 
     def __str__(self) -> str:
-        item = ''
-        for key, value in self.__dict__.items():
-            item += f'{key}:{value}\n'
-        return item
-    
+        return f'You have {self.integrate},{self.fraction} {self.currency} {self.symbol}\n'
+            
     def set_integrate(self, integrate):
         self.integrate = integrate
     
@@ -33,7 +30,7 @@ class Money:
 class Hryvnya(Money):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
+   
 class Dolar(Money):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
