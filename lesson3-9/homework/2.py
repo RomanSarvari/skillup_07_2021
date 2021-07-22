@@ -9,6 +9,8 @@
 
 class Ship:
     def __init__(self, **kwargs):
+        self.type = kwargs.get('type', None)
+        self.name = kwargs.get('name', None)
         self.country = kwargs.get('country', None)
         self.tonnage = kwargs.get('tonnage', 0.0)
         self.length = kwargs.get('length', 0.0)
@@ -50,6 +52,8 @@ class Cruiser(Ship):
         print('This Cruiser from {} and have onboard {}'.format(self.country, self.armament), '\n')
 
 hetman_sahaydachniy = Frigate(
+    type = 'Frigate',
+    name = 'Hetman Sahaydachniy',
     country = 'Ukraine',
     tonnage = '3650 tons',
     length = '123.5 meters',
@@ -61,6 +65,8 @@ hetman_sahaydachniy = Frigate(
 )
 
 uss_ross = Destroyer(
+    type = 'Destroyer',
+    name = 'USS Ross (DDG-71)',
     country = 'USA',
     tonnage = '8775 tons',
     length = '153.92 meters',
@@ -72,6 +78,8 @@ uss_ross = Destroyer(
 )
 
 hms_shannon = Cruiser(
+    type = 'Cruiser',
+    name = 'HMS Shannon',
     country = 'Great Britain',
     tonnage = '5670 tons',
     length = '90.5 meters',
